@@ -9,3 +9,23 @@ rcpp_wkt_centroid <- function(wkt) {
     .Call(`_boostgeometry_rcpp_wkt_centroid`, wkt)
 }
 
+rcpp_wkt_convex_hull <- function(wkt) {
+    .Call(`_boostgeometry_rcpp_wkt_convex_hull`, wkt)
+}
+
+rcpp_wkt_num_geometries <- function(wkt) {
+    .Call(`_boostgeometry_rcpp_wkt_num_geometries`, wkt)
+}
+
+rcpp_wkt_num_interior_rings <- function(wkt) {
+    .Call(`_boostgeometry_rcpp_wkt_num_interior_rings`, wkt)
+}
+
+rcpp_wkt_num_points <- function(wkt) {
+    .Call(`_boostgeometry_rcpp_wkt_num_points`, wkt)
+}
+
+rcpp_wkt_num_segments <- function(wkt) {
+    .Call(`_boostgeometry_rcpp_wkt_num_segments`, wkt)
+}
+

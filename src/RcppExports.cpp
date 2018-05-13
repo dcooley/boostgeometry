@@ -28,10 +28,70 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// rcpp_wkt_convex_hull
+Rcpp::StringVector rcpp_wkt_convex_hull(Rcpp::List wkt);
+RcppExport SEXP _boostgeometry_rcpp_wkt_convex_hull(SEXP wktSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::List >::type wkt(wktSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_convex_hull(wkt));
+    return rcpp_result_gen;
+END_RCPP
+}
+// rcpp_wkt_num_geometries
+Rcpp::NumericVector rcpp_wkt_num_geometries(Rcpp::List wkt);
+RcppExport SEXP _boostgeometry_rcpp_wkt_num_geometries(SEXP wktSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::List >::type wkt(wktSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_num_geometries(wkt));
+    return rcpp_result_gen;
+END_RCPP
+}
+// rcpp_wkt_num_interior_rings
+Rcpp::NumericVector rcpp_wkt_num_interior_rings(Rcpp::List wkt);
+RcppExport SEXP _boostgeometry_rcpp_wkt_num_interior_rings(SEXP wktSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::List >::type wkt(wktSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_num_interior_rings(wkt));
+    return rcpp_result_gen;
+END_RCPP
+}
+// rcpp_wkt_num_points
+Rcpp::NumericVector rcpp_wkt_num_points(Rcpp::List wkt);
+RcppExport SEXP _boostgeometry_rcpp_wkt_num_points(SEXP wktSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::List >::type wkt(wktSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_num_points(wkt));
+    return rcpp_result_gen;
+END_RCPP
+}
+// rcpp_wkt_num_segments
+Rcpp::NumericVector rcpp_wkt_num_segments(Rcpp::List wkt);
+RcppExport SEXP _boostgeometry_rcpp_wkt_num_segments(SEXP wktSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::List >::type wkt(wktSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_num_segments(wkt));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_boostgeometry_rcpp_wkt_area", (DL_FUNC) &_boostgeometry_rcpp_wkt_area, 2},
     {"_boostgeometry_rcpp_wkt_centroid", (DL_FUNC) &_boostgeometry_rcpp_wkt_centroid, 1},
+    {"_boostgeometry_rcpp_wkt_convex_hull", (DL_FUNC) &_boostgeometry_rcpp_wkt_convex_hull, 1},
+    {"_boostgeometry_rcpp_wkt_num_geometries", (DL_FUNC) &_boostgeometry_rcpp_wkt_num_geometries, 1},
+    {"_boostgeometry_rcpp_wkt_num_interior_rings", (DL_FUNC) &_boostgeometry_rcpp_wkt_num_interior_rings, 1},
+    {"_boostgeometry_rcpp_wkt_num_points", (DL_FUNC) &_boostgeometry_rcpp_wkt_num_points, 1},
+    {"_boostgeometry_rcpp_wkt_num_segments", (DL_FUNC) &_boostgeometry_rcpp_wkt_num_segments, 1},
     {NULL, NULL, 0}
 };
 

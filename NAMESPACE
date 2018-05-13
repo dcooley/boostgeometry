@@ -2,5 +2,9 @@
 
 export(bg_area)
 export(bg_centroid)
+export(bg_number_geometries)
+export(bg_number_interior_rings)
+export(bg_number_points)
+export(bg_number_segments)
 importFrom(Rcpp,sourceCpp)
 useDynLib(boostgeometry, .registration = TRUE)

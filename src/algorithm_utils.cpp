@@ -1,7 +1,8 @@
+#include "R_boostgeometry.h"
 #include <Rcpp.h>
 using namespace Rcpp;
 
-void make_strategy(const char* strategy, int *tp = NULL) {
+void make_strategy(const char* strategy, int *tp) {
   int type = 0;
   if (strcmp(strategy, "cartesian") == 0) {
     type = BG_Cartesian;

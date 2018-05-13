@@ -68,6 +68,7 @@ private:
 };
 }
 
+//typedef boost::tuple<double, double> generic_point;
 typedef bgm::point< double, 2, bg::cs::geographic< bg::degree > > point_type_geographic;
 typedef bgm::point< double, 2, bg::cs::spherical_equatorial< bg::degree > > point_type_spherical;
 typedef bgm::point< double, 2, bg::cs::cartesian > point_type_cartesian;
