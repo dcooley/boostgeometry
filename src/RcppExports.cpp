@@ -39,6 +39,18 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// rcpp_wkt_length_haversine
+Rcpp::NumericVector rcpp_wkt_length_haversine(Rcpp::List wkt, const char* strategy);
+RcppExport SEXP _boostgeometry_rcpp_wkt_length_haversine(SEXP wktSEXP, SEXP strategySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::List >::type wkt(wktSEXP);
+    Rcpp::traits::input_parameter< const char* >::type strategy(strategySEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_length_haversine(wkt, strategy));
+    return rcpp_result_gen;
+END_RCPP
+}
 // rcpp_wkt_num_geometries
 Rcpp::NumericVector rcpp_wkt_num_geometries(Rcpp::List wkt);
 RcppExport SEXP _boostgeometry_rcpp_wkt_num_geometries(SEXP wktSEXP) {
@@ -88,6 +100,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_boostgeometry_rcpp_wkt_area", (DL_FUNC) &_boostgeometry_rcpp_wkt_area, 2},
     {"_boostgeometry_rcpp_wkt_centroid", (DL_FUNC) &_boostgeometry_rcpp_wkt_centroid, 1},
     {"_boostgeometry_rcpp_wkt_convex_hull", (DL_FUNC) &_boostgeometry_rcpp_wkt_convex_hull, 1},
+    {"_boostgeometry_rcpp_wkt_length_haversine", (DL_FUNC) &_boostgeometry_rcpp_wkt_length_haversine, 2},
     {"_boostgeometry_rcpp_wkt_num_geometries", (DL_FUNC) &_boostgeometry_rcpp_wkt_num_geometries, 1},
     {"_boostgeometry_rcpp_wkt_num_interior_rings", (DL_FUNC) &_boostgeometry_rcpp_wkt_num_interior_rings, 1},
     {"_boostgeometry_rcpp_wkt_num_points", (DL_FUNC) &_boostgeometry_rcpp_wkt_num_points, 1},
