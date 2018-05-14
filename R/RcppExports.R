@@ -13,6 +13,30 @@ rcpp_wkt_convex_hull <- function(wkt) {
     .Call(`_boostgeometry_rcpp_wkt_convex_hull`, wkt)
 }
 
+rcpp_wkt_distance_cartesian <- function(wktFrom, wktTo) {
+    .Call(`_boostgeometry_rcpp_wkt_distance_cartesian`, wktFrom, wktTo)
+}
+
+rcpp_wkt_distance_spherical <- function(wktFrom, wktTo) {
+    .Call(`_boostgeometry_rcpp_wkt_distance_spherical`, wktFrom, wktTo)
+}
+
+rcpp_wkt_distance_geographic <- function(wktFrom, wktTo) {
+    .Call(`_boostgeometry_rcpp_wkt_distance_geographic`, wktFrom, wktTo)
+}
+
+rcpp_wkt_is_empty <- function(wkt, strategy) {
+    .Call(`_boostgeometry_rcpp_wkt_is_empty`, wkt, strategy)
+}
+
+rcpp_wkt_is_simple <- function(wkt, strategy) {
+    .Call(`_boostgeometry_rcpp_wkt_is_simple`, wkt, strategy)
+}
+
+rcpp_wkt_is_valid <- function(wkt, strategy) {
+    .Call(`_boostgeometry_rcpp_wkt_is_valid`, wkt, strategy)
+}
+
 rcpp_wkt_length_cartesian <- function(wkt) {
     .Call(`_boostgeometry_rcpp_wkt_length_cartesian`, wkt)
 }
