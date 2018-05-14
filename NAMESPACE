@@ -2,6 +2,7 @@
 
 export(bg_area)
 export(bg_centroid)
+export(bg_length)
 export(bg_number_geometries)
 export(bg_number_interior_rings)
 export(bg_number_points)

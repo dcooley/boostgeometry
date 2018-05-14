@@ -39,15 +39,36 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// rcpp_wkt_length_haversine
-Rcpp::NumericVector rcpp_wkt_length_haversine(Rcpp::List wkt, const char* strategy);
-RcppExport SEXP _boostgeometry_rcpp_wkt_length_haversine(SEXP wktSEXP, SEXP strategySEXP) {
+// rcpp_wkt_length_cartesian
+Rcpp::NumericVector rcpp_wkt_length_cartesian(Rcpp::List wkt);
+RcppExport SEXP _boostgeometry_rcpp_wkt_length_cartesian(SEXP wktSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< Rcpp::List >::type wkt(wktSEXP);
-    Rcpp::traits::input_parameter< const char* >::type strategy(strategySEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_length_haversine(wkt, strategy));
+    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_length_cartesian(wkt));
+    return rcpp_result_gen;
+END_RCPP
+}
+// rcpp_wkt_length_spherical
+Rcpp::NumericVector rcpp_wkt_length_spherical(Rcpp::List wkt);
+RcppExport SEXP _boostgeometry_rcpp_wkt_length_spherical(SEXP wktSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::List >::type wkt(wktSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_length_spherical(wkt));
+    return rcpp_result_gen;
+END_RCPP
+}
+// rcpp_wkt_length_geographic
+Rcpp::NumericVector rcpp_wkt_length_geographic(Rcpp::List wkt);
+RcppExport SEXP _boostgeometry_rcpp_wkt_length_geographic(SEXP wktSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::List >::type wkt(wktSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_length_geographic(wkt));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -100,7 +121,9 @@ static const R_CallMethodDef CallEntries[] = {
     {"_boostgeometry_rcpp_wkt_area", (DL_FUNC) &_boostgeometry_rcpp_wkt_area, 2},
     {"_boostgeometry_rcpp_wkt_centroid", (DL_FUNC) &_boostgeometry_rcpp_wkt_centroid, 1},
     {"_boostgeometry_rcpp_wkt_convex_hull", (DL_FUNC) &_boostgeometry_rcpp_wkt_convex_hull, 1},
-    {"_boostgeometry_rcpp_wkt_length_haversine", (DL_FUNC) &_boostgeometry_rcpp_wkt_length_haversine, 2},
+    {"_boostgeometry_rcpp_wkt_length_cartesian", (DL_FUNC) &_boostgeometry_rcpp_wkt_length_cartesian, 1},
+    {"_boostgeometry_rcpp_wkt_length_spherical", (DL_FUNC) &_boostgeometry_rcpp_wkt_length_spherical, 1},
+    {"_boostgeometry_rcpp_wkt_length_geographic", (DL_FUNC) &_boostgeometry_rcpp_wkt_length_geographic, 1},
     {"_boostgeometry_rcpp_wkt_num_geometries", (DL_FUNC) &_boostgeometry_rcpp_wkt_num_geometries, 1},
     {"_boostgeometry_rcpp_wkt_num_interior_rings", (DL_FUNC) &_boostgeometry_rcpp_wkt_num_interior_rings, 1},
     {"_boostgeometry_rcpp_wkt_num_points", (DL_FUNC) &_boostgeometry_rcpp_wkt_num_points, 1},

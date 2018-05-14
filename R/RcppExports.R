@@ -13,8 +13,16 @@ rcpp_wkt_convex_hull <- function(wkt) {
     .Call(`_boostgeometry_rcpp_wkt_convex_hull`, wkt)
 }
 
-rcpp_wkt_length_haversine <- function(wkt, strategy) {
-    .Call(`_boostgeometry_rcpp_wkt_length_haversine`, wkt, strategy)
+rcpp_wkt_length_cartesian <- function(wkt) {
+    .Call(`_boostgeometry_rcpp_wkt_length_cartesian`, wkt)
+}
+
+rcpp_wkt_length_spherical <- function(wkt) {
+    .Call(`_boostgeometry_rcpp_wkt_length_spherical`, wkt)
+}
+
+rcpp_wkt_length_geographic <- function(wkt) {
+    .Call(`_boostgeometry_rcpp_wkt_length_geographic`, wkt)
 }
 
 rcpp_wkt_num_geometries <- function(wkt) {

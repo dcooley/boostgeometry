@@ -106,33 +106,14 @@ typedef boost::variant<
 > GeographicGeometry;
 
 typedef boost::variant<
-  point_type_cartesian,
-  bgm::linestring<point_type_geographic>,
-  bgm::multi_linestring<point_type_geographic>
-> CartesianLine;
-
-typedef boost::variant<
-  point_type_spherical,
-  bgm::linestring<point_type_geographic>,
-  bgm::multi_linestring<point_type_geographic>
-> SphericalLine;
-
-typedef boost::variant<
-  point_type_geographic,
-  bgm::linestring<point_type_geographic>,
-  bgm::multi_linestring<point_type_geographic>
-> GeographicLine;
-
-typedef boost::variant<
-  CartesianLine,
-  SphericalLine,
-  GeographicLine
-> CSGLine;
-
-typedef boost::variant<
   CartesianGeometry,
   SphericalGeometry
 > CSGeometry;
+
+typedef boost::variant<
+  SphericalGeometry,
+  GeographicGeometry
+> SGGeometry;
 
 typedef boost::variant<
   CartesianGeometry,
@@ -166,18 +147,17 @@ Variant read_cs_wkt(std::string const& wkt, int geom_type) {
   return read_cartesian_wkt(wkt);
 }
 
-template <typename Variant = CSGLine>
-Variant read_any_line_wkt(std::string const& wkt, int geom_type) {
+template <typename Variant = SGGeometry>
+Variant read_sg_wkt(std::string const& wkt, int geom_type) {
   switch( geom_type ) {
-  case 1:
-    return read_cartesian_wkt(wkt);
   case 2:
     return read_spherical_wkt(wkt);
   case 3:
     return read_geographic_wkt(wkt);
   }
-  return read_cartesian_wkt(wkt);
+  return read_spherical_wkt(wkt);
 }
+
 
 template <typename Variant = CSGGeometry>
 Variant read_any_wkt(std::string const& wkt, int geom_type) {
