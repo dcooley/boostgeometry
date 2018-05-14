@@ -188,6 +188,19 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// rcpp_wkt_simplify
+Rcpp::StringVector rcpp_wkt_simplify(Rcpp::List wkt, const char* strategy, double distance);
+RcppExport SEXP _boostgeometry_rcpp_wkt_simplify(SEXP wktSEXP, SEXP strategySEXP, SEXP distanceSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::List >::type wkt(wktSEXP);
+    Rcpp::traits::input_parameter< const char* >::type strategy(strategySEXP);
+    Rcpp::traits::input_parameter< double >::type distance(distanceSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_simplify(wkt, strategy, distance));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_boostgeometry_rcpp_wkt_area", (DL_FUNC) &_boostgeometry_rcpp_wkt_area, 2},
@@ -206,6 +219,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_boostgeometry_rcpp_wkt_num_interior_rings", (DL_FUNC) &_boostgeometry_rcpp_wkt_num_interior_rings, 1},
     {"_boostgeometry_rcpp_wkt_num_points", (DL_FUNC) &_boostgeometry_rcpp_wkt_num_points, 1},
     {"_boostgeometry_rcpp_wkt_num_segments", (DL_FUNC) &_boostgeometry_rcpp_wkt_num_segments, 1},
+    {"_boostgeometry_rcpp_wkt_simplify", (DL_FUNC) &_boostgeometry_rcpp_wkt_simplify, 3},
     {NULL, NULL, 0}
 };
 

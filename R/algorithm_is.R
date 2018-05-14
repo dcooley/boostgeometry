@@ -2,7 +2,8 @@
 #'
 #' Checks if a geometry is empty
 #'
-#' @param wktFrom
+#' @param wkt
+#' @param strategy
 #'
 #' @examples
 #'
@@ -17,7 +18,8 @@ bg_is_empty <- function(wkt, strategy = c("cartesian", "spherical", "geographic"
 #'
 #' Checks if a geometry is simple
 #'
-#' @param wktFrom
+#' @param wkt
+#' @param strategy
 #'
 #' @examples
 #'
@@ -31,7 +33,8 @@ bg_is_simple <- function(wkt, strategy = c("cartesian", "spherical", "geographic
 #'
 #' Checks if a geometry is valid
 #'
-#' @param wktFrom
+#' @param wkt
+#' @param strategy
 #'
 #' @examples
 #'

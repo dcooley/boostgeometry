@@ -65,3 +65,7 @@ rcpp_wkt_num_segments <- function(wkt) {
     .Call(`_boostgeometry_rcpp_wkt_num_segments`, wkt)
 }
 
+rcpp_wkt_simplify <- function(wkt, strategy, distance) {
+    .Call(`_boostgeometry_rcpp_wkt_simplify`, wkt, strategy, distance)
+}
+
