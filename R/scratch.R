@@ -7,6 +7,11 @@
 #
 # boostgeometry:::wkt_centroid(wnce$geometry)
 
+# boostgeometry::bg_area(wnce$geometry)
+# boostgeometry::bg_centroid(wnce$geometry)
+#
+# sf::st_area(nc)
+
 ## Benchmarking
 ## Assumes the input data is in the correct format alread:
 ## - bost :: wkt

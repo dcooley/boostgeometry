@@ -61,7 +61,6 @@ private:
         throw std::logic_error(std::string("registering WKT for ") + typeid(seed).name());
       }
     });
-
     return result;
   }
 };
@@ -100,6 +99,7 @@ typedef boost::variant<
   bgm::multi_polygon<bgm::polygon<point_type_geographic> >
 > GeographicGeometry;
 
+
 typedef boost::variant<
   CartesianGeometry,
   SphericalGeometry
@@ -130,6 +130,7 @@ template <typename Variant = GeographicGeometry>
 Variant read_geographic_wkt(std::string const& wkt) {
   return detail::read_any_helper<Variant>::call(wkt);
 }
+
 
 template <typename Variant = CSGeometry>
 Variant read_cs_wkt(std::string const& wkt, int geom_type) {

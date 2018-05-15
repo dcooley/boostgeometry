@@ -7,7 +7,7 @@
 bg_is_valid(wkt, strategy = c("cartesian", "spherical", "geographic"))
 }
 \arguments{
-\item{wktFrom}{}
+\item{strategy}{}
 }
 \description{
 Checks if a geometry is valid
