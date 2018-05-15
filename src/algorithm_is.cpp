@@ -2,7 +2,7 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
-
+/*
 // [[Rcpp::export]]
 Rcpp::NumericVector rcpp_wkt_is_empty( Rcpp::List wkt, const char* strategy ) {
   Rcpp::NumericVector wktEmpty( wkt.length() );
@@ -51,5 +51,5 @@ Rcpp::NumericVector rcpp_wkt_is_valid( Rcpp::List wkt, const char* strategy ) {
   return wktValid;
 }
 
-
+*/
 

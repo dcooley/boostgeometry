@@ -3,7 +3,7 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
-
+/*
 // [[Rcpp::export]]
 Rcpp::NumericVector rcpp_wkt_num_geometries( Rcpp::List wkt ) {
 
@@ -68,3 +68,4 @@ Rcpp::NumericVector rcpp_wkt_num_segments( Rcpp::List wkt ) {
   }
   return wktNumG;
 }
+*/

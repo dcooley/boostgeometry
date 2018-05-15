@@ -3,7 +3,7 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
-
+/*
 // [[Rcpp::export]]
 Rcpp::NumericVector rcpp_wkt_area( Rcpp::List wkt, const char* strategy ) {
   Rcpp::NumericVector wktArea( wkt.length() );
@@ -20,4 +20,4 @@ Rcpp::NumericVector rcpp_wkt_area( Rcpp::List wkt, const char* strategy ) {
   }
   return wktArea;
 }
-
+*/

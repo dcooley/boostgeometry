@@ -45,3 +45,4 @@ Rcpp::StringVector rcpp_wkt_convex_hull( Rcpp::List wkt ) {
   */
   return wktHull;
 }
+

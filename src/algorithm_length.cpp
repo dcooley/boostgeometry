@@ -3,6 +3,7 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
+/*
 // [[Rcpp::export]]
 Rcpp::NumericVector rcpp_wkt_length_cartesian( Rcpp::List wkt ) {
   Rcpp::NumericVector wktLength( wkt.length() );
@@ -47,7 +48,7 @@ Rcpp::NumericVector rcpp_wkt_length_geographic( Rcpp::List wkt ) {
   }
   return wktLength;
 }
-
+*/
 
 
 

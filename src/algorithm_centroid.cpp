@@ -3,6 +3,7 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
+/*
 // [[Rcpp::export]]
 Rcpp::StringVector rcpp_wkt_centroid( Rcpp::List wkt ) {
   Rcpp::StringVector wktCentroid( wkt.length() );
@@ -20,5 +21,5 @@ Rcpp::StringVector rcpp_wkt_centroid( Rcpp::List wkt ) {
   }
   return wktCentroid;
 }
-
+*/
 

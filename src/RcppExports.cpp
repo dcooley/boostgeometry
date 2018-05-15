@@ -5,29 +5,6 @@
 
 using namespace Rcpp;
 
-// rcpp_wkt_area
-Rcpp::NumericVector rcpp_wkt_area(Rcpp::List wkt, const char* strategy);
-RcppExport SEXP _boostgeometry_rcpp_wkt_area(SEXP wktSEXP, SEXP strategySEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::List >::type wkt(wktSEXP);
-    Rcpp::traits::input_parameter< const char* >::type strategy(strategySEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_area(wkt, strategy));
-    return rcpp_result_gen;
-END_RCPP
-}
-// rcpp_wkt_centroid
-Rcpp::StringVector rcpp_wkt_centroid(Rcpp::List wkt);
-RcppExport SEXP _boostgeometry_rcpp_wkt_centroid(SEXP wktSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::List >::type wkt(wktSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_centroid(wkt));
-    return rcpp_result_gen;
-END_RCPP
-}
 // rcpp_wkt_convex_hull
 Rcpp::StringVector rcpp_wkt_convex_hull(Rcpp::List wkt);
 RcppExport SEXP _boostgeometry_rcpp_wkt_convex_hull(SEXP wktSEXP) {
@@ -39,152 +16,36 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// rcpp_wkt_distance_cartesian
-Rcpp::NumericMatrix rcpp_wkt_distance_cartesian(Rcpp::List wktFrom, Rcpp::List wktTo);
-RcppExport SEXP _boostgeometry_rcpp_wkt_distance_cartesian(SEXP wktFromSEXP, SEXP wktToSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::List >::type wktFrom(wktFromSEXP);
-    Rcpp::traits::input_parameter< Rcpp::List >::type wktTo(wktToSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_distance_cartesian(wktFrom, wktTo));
-    return rcpp_result_gen;
-END_RCPP
-}
-// rcpp_wkt_distance_spherical
-Rcpp::NumericMatrix rcpp_wkt_distance_spherical(Rcpp::List wktFrom, Rcpp::List wktTo);
-RcppExport SEXP _boostgeometry_rcpp_wkt_distance_spherical(SEXP wktFromSEXP, SEXP wktToSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::List >::type wktFrom(wktFromSEXP);
-    Rcpp::traits::input_parameter< Rcpp::List >::type wktTo(wktToSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_distance_spherical(wktFrom, wktTo));
-    return rcpp_result_gen;
-END_RCPP
-}
-// rcpp_wkt_distance_geographic
-Rcpp::NumericMatrix rcpp_wkt_distance_geographic(Rcpp::List wktFrom, Rcpp::List wktTo);
-RcppExport SEXP _boostgeometry_rcpp_wkt_distance_geographic(SEXP wktFromSEXP, SEXP wktToSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::List >::type wktFrom(wktFromSEXP);
-    Rcpp::traits::input_parameter< Rcpp::List >::type wktTo(wktToSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_distance_geographic(wktFrom, wktTo));
-    return rcpp_result_gen;
-END_RCPP
-}
-// rcpp_wkt_is_empty
-Rcpp::NumericVector rcpp_wkt_is_empty(Rcpp::List wkt, const char* strategy);
-RcppExport SEXP _boostgeometry_rcpp_wkt_is_empty(SEXP wktSEXP, SEXP strategySEXP) {
+// rcpp_wkt_perimeter_cartesian
+Rcpp::NumericVector rcpp_wkt_perimeter_cartesian(Rcpp::List wkt);
+RcppExport SEXP _boostgeometry_rcpp_wkt_perimeter_cartesian(SEXP wktSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< Rcpp::List >::type wkt(wktSEXP);
-    Rcpp::traits::input_parameter< const char* >::type strategy(strategySEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_is_empty(wkt, strategy));
+    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_perimeter_cartesian(wkt));
     return rcpp_result_gen;
 END_RCPP
 }
-// rcpp_wkt_is_simple
-Rcpp::NumericVector rcpp_wkt_is_simple(Rcpp::List wkt, const char* strategy);
-RcppExport SEXP _boostgeometry_rcpp_wkt_is_simple(SEXP wktSEXP, SEXP strategySEXP) {
+// rcpp_wkt_perimeter_spherical
+Rcpp::NumericVector rcpp_wkt_perimeter_spherical(Rcpp::List wkt);
+RcppExport SEXP _boostgeometry_rcpp_wkt_perimeter_spherical(SEXP wktSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< Rcpp::List >::type wkt(wktSEXP);
-    Rcpp::traits::input_parameter< const char* >::type strategy(strategySEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_is_simple(wkt, strategy));
+    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_perimeter_spherical(wkt));
     return rcpp_result_gen;
 END_RCPP
 }
-// rcpp_wkt_is_valid
-Rcpp::NumericVector rcpp_wkt_is_valid(Rcpp::List wkt, const char* strategy);
-RcppExport SEXP _boostgeometry_rcpp_wkt_is_valid(SEXP wktSEXP, SEXP strategySEXP) {
+// rcpp_wkt_perimeter_geographic
+Rcpp::NumericVector rcpp_wkt_perimeter_geographic(Rcpp::List wkt);
+RcppExport SEXP _boostgeometry_rcpp_wkt_perimeter_geographic(SEXP wktSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< Rcpp::List >::type wkt(wktSEXP);
-    Rcpp::traits::input_parameter< const char* >::type strategy(strategySEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_is_valid(wkt, strategy));
-    return rcpp_result_gen;
-END_RCPP
-}
-// rcpp_wkt_length_cartesian
-Rcpp::NumericVector rcpp_wkt_length_cartesian(Rcpp::List wkt);
-RcppExport SEXP _boostgeometry_rcpp_wkt_length_cartesian(SEXP wktSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::List >::type wkt(wktSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_length_cartesian(wkt));
-    return rcpp_result_gen;
-END_RCPP
-}
-// rcpp_wkt_length_spherical
-Rcpp::NumericVector rcpp_wkt_length_spherical(Rcpp::List wkt);
-RcppExport SEXP _boostgeometry_rcpp_wkt_length_spherical(SEXP wktSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::List >::type wkt(wktSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_length_spherical(wkt));
-    return rcpp_result_gen;
-END_RCPP
-}
-// rcpp_wkt_length_geographic
-Rcpp::NumericVector rcpp_wkt_length_geographic(Rcpp::List wkt);
-RcppExport SEXP _boostgeometry_rcpp_wkt_length_geographic(SEXP wktSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::List >::type wkt(wktSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_length_geographic(wkt));
-    return rcpp_result_gen;
-END_RCPP
-}
-// rcpp_wkt_num_geometries
-Rcpp::NumericVector rcpp_wkt_num_geometries(Rcpp::List wkt);
-RcppExport SEXP _boostgeometry_rcpp_wkt_num_geometries(SEXP wktSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::List >::type wkt(wktSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_num_geometries(wkt));
-    return rcpp_result_gen;
-END_RCPP
-}
-// rcpp_wkt_num_interior_rings
-Rcpp::NumericVector rcpp_wkt_num_interior_rings(Rcpp::List wkt);
-RcppExport SEXP _boostgeometry_rcpp_wkt_num_interior_rings(SEXP wktSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::List >::type wkt(wktSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_num_interior_rings(wkt));
-    return rcpp_result_gen;
-END_RCPP
-}
-// rcpp_wkt_num_points
-Rcpp::NumericVector rcpp_wkt_num_points(Rcpp::List wkt);
-RcppExport SEXP _boostgeometry_rcpp_wkt_num_points(SEXP wktSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::List >::type wkt(wktSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_num_points(wkt));
-    return rcpp_result_gen;
-END_RCPP
-}
-// rcpp_wkt_num_segments
-Rcpp::NumericVector rcpp_wkt_num_segments(Rcpp::List wkt);
-RcppExport SEXP _boostgeometry_rcpp_wkt_num_segments(SEXP wktSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::List >::type wkt(wktSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_num_segments(wkt));
+    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_perimeter_geographic(wkt));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -201,25 +62,26 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// rcpp_wkt_unique
+Rcpp::StringVector rcpp_wkt_unique(Rcpp::List wkt, const char* strategy);
+RcppExport SEXP _boostgeometry_rcpp_wkt_unique(SEXP wktSEXP, SEXP strategySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::List >::type wkt(wktSEXP);
+    Rcpp::traits::input_parameter< const char* >::type strategy(strategySEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_unique(wkt, strategy));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_boostgeometry_rcpp_wkt_area", (DL_FUNC) &_boostgeometry_rcpp_wkt_area, 2},
-    {"_boostgeometry_rcpp_wkt_centroid", (DL_FUNC) &_boostgeometry_rcpp_wkt_centroid, 1},
     {"_boostgeometry_rcpp_wkt_convex_hull", (DL_FUNC) &_boostgeometry_rcpp_wkt_convex_hull, 1},
-    {"_boostgeometry_rcpp_wkt_distance_cartesian", (DL_FUNC) &_boostgeometry_rcpp_wkt_distance_cartesian, 2},
-    {"_boostgeometry_rcpp_wkt_distance_spherical", (DL_FUNC) &_boostgeometry_rcpp_wkt_distance_spherical, 2},
-    {"_boostgeometry_rcpp_wkt_distance_geographic", (DL_FUNC) &_boostgeometry_rcpp_wkt_distance_geographic, 2},
-    {"_boostgeometry_rcpp_wkt_is_empty", (DL_FUNC) &_boostgeometry_rcpp_wkt_is_empty, 2},
-    {"_boostgeometry_rcpp_wkt_is_simple", (DL_FUNC) &_boostgeometry_rcpp_wkt_is_simple, 2},
-    {"_boostgeometry_rcpp_wkt_is_valid", (DL_FUNC) &_boostgeometry_rcpp_wkt_is_valid, 2},
-    {"_boostgeometry_rcpp_wkt_length_cartesian", (DL_FUNC) &_boostgeometry_rcpp_wkt_length_cartesian, 1},
-    {"_boostgeometry_rcpp_wkt_length_spherical", (DL_FUNC) &_boostgeometry_rcpp_wkt_length_spherical, 1},
-    {"_boostgeometry_rcpp_wkt_length_geographic", (DL_FUNC) &_boostgeometry_rcpp_wkt_length_geographic, 1},
-    {"_boostgeometry_rcpp_wkt_num_geometries", (DL_FUNC) &_boostgeometry_rcpp_wkt_num_geometries, 1},
-    {"_boostgeometry_rcpp_wkt_num_interior_rings", (DL_FUNC) &_boostgeometry_rcpp_wkt_num_interior_rings, 1},
-    {"_boostgeometry_rcpp_wkt_num_points", (DL_FUNC) &_boostgeometry_rcpp_wkt_num_points, 1},
-    {"_boostgeometry_rcpp_wkt_num_segments", (DL_FUNC) &_boostgeometry_rcpp_wkt_num_segments, 1},
+    {"_boostgeometry_rcpp_wkt_perimeter_cartesian", (DL_FUNC) &_boostgeometry_rcpp_wkt_perimeter_cartesian, 1},
+    {"_boostgeometry_rcpp_wkt_perimeter_spherical", (DL_FUNC) &_boostgeometry_rcpp_wkt_perimeter_spherical, 1},
+    {"_boostgeometry_rcpp_wkt_perimeter_geographic", (DL_FUNC) &_boostgeometry_rcpp_wkt_perimeter_geographic, 1},
     {"_boostgeometry_rcpp_wkt_simplify", (DL_FUNC) &_boostgeometry_rcpp_wkt_simplify, 3},
+    {"_boostgeometry_rcpp_wkt_unique", (DL_FUNC) &_boostgeometry_rcpp_wkt_unique, 2},
     {NULL, NULL, 0}
 };
 

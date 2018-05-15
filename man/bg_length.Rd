@@ -4,7 +4,7 @@
 \alias{bg_length}
 \title{BG Length}
 \usage{
-bg_length(wkt, strategy = c("cartesian", "spherical", "geographic"))
+bg_length(x, strategy = c("cartesian", "spherical", "geographic"))
 }
 \arguments{
 \item{strategy}{}
