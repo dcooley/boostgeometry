@@ -11,12 +11,15 @@ Rcpp::StringVector rcpp_wkt_unique( Rcpp::List wkt, const char* strategy ) {
   boost::geometry::unique(poly);
   std::cout << boost::geometry::wkt(poly) << std::endl;
 
-  CSGGeometry geom;
+  // TODO(variants)
+  // - doesn't work with variants
+  bgm::polygon<point_type_cartesian> geom;
   int tp;
   make_strategy(strategy, &tp);
 
   for (size_t i = 0; i < wkt.length(); i++ ) {
-    geom = read_any_wkt(wkt[i], tp);
+    //geom = read_any_wkt(wkt[i], tp);
+    bg::read_wkt(wkt[i], geom);
     bg::unique( geom );
     std::ostringstream os;
     os << bg::wkt( geom );

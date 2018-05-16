@@ -72,6 +72,14 @@ typedef bgm::point< float, 2, bg::cs::spherical_equatorial< bg::degree > > point
 typedef bgm::point< float, 2, bg::cs::geographic< bg::degree > > point_type_geographic;
 //typedef bgm::d2::point_xy<double> point_type_d2;
 
+/*
+typedef boost::variant<
+  bgm::polygon<point_type_cartesian>,
+  bgm::polygon<point_type_spherical>,
+  bgm::polygon<point_type_geographic>
+> CSGPolygon;
+*/
+
 typedef boost::variant<
   point_type_cartesian,
   bgm::multi_point<point_type_cartesian>,
@@ -131,6 +139,20 @@ Variant read_geographic_wkt(std::string const& wkt) {
   return detail::read_any_helper<Variant>::call(wkt);
 }
 
+/*
+template <typename Variant = CSGPolygon>
+Variant read_csgpolygon_wkt(std::string const& wkt, int geom_type) {
+  switch( geom_type ) {
+  case 1:
+    return read_cartesian_wkt(wkt);
+  case 2:
+    return read_spherical_wkt(wkt);
+  case 3:
+    return read_geographic_wkt(wkt);
+  }
+  return read_cartesian_wkt(wkt);
+}
+*/
 
 template <typename Variant = CSGeometry>
 Variant read_cs_wkt(std::string const& wkt, int geom_type) {
