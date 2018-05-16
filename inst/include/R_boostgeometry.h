@@ -107,6 +107,15 @@ typedef boost::variant<
   bgm::multi_polygon<bgm::polygon<point_type_geographic> >
 > GeographicGeometry;
 
+typedef bgm::box<point_type_cartesian> CartesianBox;
+typedef bgm::box<point_type_spherical> SphericalBox;
+typedef bgm::box<point_type_geographic> GeographicBox;
+
+typedef boost::variant<
+  bgm::box<point_type_cartesian>,
+  bgm::box<point_type_spherical>,
+  bgm::box<point_type_geographic>
+> CSGBox;
 
 typedef boost::variant<
   CartesianGeometry,
@@ -190,10 +199,23 @@ Variant read_any_wkt(std::string const& wkt, int geom_type) {
   return read_cartesian_wkt(wkt);
 }
 
-#define BG_Unknown     0
-#define BG_Cartesian   1
-#define BG_Spherical   2
-#define BG_Geographic  3
+std::string geomFromWKT(std::string& pl);
+
+#define BG_Unknown      0
+#define BG_Cartesian    1
+#define BG_Spherical    2
+#define BG_Geographic   3
+
+#define POINT           0
+#define MULTIPOINT      1
+#define LINESTRING      2
+#define MULTILINESTRING 3
+#define POLYGON         4
+#define MULTIPOLYGON    5
+#define BOX             6
+#define SEGMENT         7
+
+
 
 void make_strategy(const char* strategy, int *tp = NULL);
 

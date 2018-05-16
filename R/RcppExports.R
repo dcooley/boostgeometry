@@ -5,8 +5,16 @@ rcpp_wkt_convex_hull <- function(wkt) {
     .Call(`_boostgeometry_rcpp_wkt_convex_hull`, wkt)
 }
 
-rcpp_wkt_envelope <- function(wkt, strategy) {
-    .Call(`_boostgeometry_rcpp_wkt_envelope`, wkt, strategy)
+rcpp_wkt_envelope_cartesian <- function(wkt) {
+    .Call(`_boostgeometry_rcpp_wkt_envelope_cartesian`, wkt)
+}
+
+rcpp_wkt_envelope_spherical <- function(wkt) {
+    .Call(`_boostgeometry_rcpp_wkt_envelope_spherical`, wkt)
+}
+
+rcpp_wkt_envelope_geographic <- function(wkt) {
+    .Call(`_boostgeometry_rcpp_wkt_envelope_geographic`, wkt)
 }
 
 rcpp_wkt_perimeter_cartesian <- function(wkt) {

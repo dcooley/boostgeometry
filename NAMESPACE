@@ -3,6 +3,7 @@
 export(bg_area)
 export(bg_centroid)
 export(bg_distance)
+export(bg_envelope)
 export(bg_is_empty)
 export(bg_is_simple)
 export(bg_is_valid)

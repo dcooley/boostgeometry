@@ -16,15 +16,36 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// rcpp_wkt_envelope
-Rcpp::StringVector rcpp_wkt_envelope(Rcpp::List wkt, const char* strategy);
-RcppExport SEXP _boostgeometry_rcpp_wkt_envelope(SEXP wktSEXP, SEXP strategySEXP) {
+// rcpp_wkt_envelope_cartesian
+Rcpp::StringVector rcpp_wkt_envelope_cartesian(Rcpp::List wkt);
+RcppExport SEXP _boostgeometry_rcpp_wkt_envelope_cartesian(SEXP wktSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< Rcpp::List >::type wkt(wktSEXP);
-    Rcpp::traits::input_parameter< const char* >::type strategy(strategySEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_envelope(wkt, strategy));
+    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_envelope_cartesian(wkt));
+    return rcpp_result_gen;
+END_RCPP
+}
+// rcpp_wkt_envelope_spherical
+Rcpp::StringVector rcpp_wkt_envelope_spherical(Rcpp::List wkt);
+RcppExport SEXP _boostgeometry_rcpp_wkt_envelope_spherical(SEXP wktSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::List >::type wkt(wktSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_envelope_spherical(wkt));
+    return rcpp_result_gen;
+END_RCPP
+}
+// rcpp_wkt_envelope_geographic
+Rcpp::StringVector rcpp_wkt_envelope_geographic(Rcpp::List wkt);
+RcppExport SEXP _boostgeometry_rcpp_wkt_envelope_geographic(SEXP wktSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::List >::type wkt(wktSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_envelope_geographic(wkt));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -89,7 +110,9 @@ END_RCPP
 
 static const R_CallMethodDef CallEntries[] = {
     {"_boostgeometry_rcpp_wkt_convex_hull", (DL_FUNC) &_boostgeometry_rcpp_wkt_convex_hull, 1},
-    {"_boostgeometry_rcpp_wkt_envelope", (DL_FUNC) &_boostgeometry_rcpp_wkt_envelope, 2},
+    {"_boostgeometry_rcpp_wkt_envelope_cartesian", (DL_FUNC) &_boostgeometry_rcpp_wkt_envelope_cartesian, 1},
+    {"_boostgeometry_rcpp_wkt_envelope_spherical", (DL_FUNC) &_boostgeometry_rcpp_wkt_envelope_spherical, 1},
+    {"_boostgeometry_rcpp_wkt_envelope_geographic", (DL_FUNC) &_boostgeometry_rcpp_wkt_envelope_geographic, 1},
     {"_boostgeometry_rcpp_wkt_perimeter_cartesian", (DL_FUNC) &_boostgeometry_rcpp_wkt_perimeter_cartesian, 1},
     {"_boostgeometry_rcpp_wkt_perimeter_spherical", (DL_FUNC) &_boostgeometry_rcpp_wkt_perimeter_spherical, 1},
     {"_boostgeometry_rcpp_wkt_perimeter_geographic", (DL_FUNC) &_boostgeometry_rcpp_wkt_perimeter_geographic, 1},
