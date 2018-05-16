@@ -5,6 +5,18 @@
 
 using namespace Rcpp;
 
+// rcpp_wkt_area
+Rcpp::NumericVector rcpp_wkt_area(Rcpp::List wkt, const char* strategy);
+RcppExport SEXP _boostgeometry_rcpp_wkt_area(SEXP wktSEXP, SEXP strategySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::List >::type wkt(wktSEXP);
+    Rcpp::traits::input_parameter< const char* >::type strategy(strategySEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_area(wkt, strategy));
+    return rcpp_result_gen;
+END_RCPP
+}
 // rcpp_wkt_convex_hull
 Rcpp::StringVector rcpp_wkt_convex_hull(Rcpp::List wkt);
 RcppExport SEXP _boostgeometry_rcpp_wkt_convex_hull(SEXP wktSEXP) {
@@ -13,6 +25,19 @@ BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< Rcpp::List >::type wkt(wktSEXP);
     rcpp_result_gen = Rcpp::wrap(rcpp_wkt_convex_hull(wkt));
+    return rcpp_result_gen;
+END_RCPP
+}
+// rcpp_wkt_crosses
+Rcpp::LogicalVector rcpp_wkt_crosses(Rcpp::List wkt1, Rcpp::List wkt2, const char* strategy);
+RcppExport SEXP _boostgeometry_rcpp_wkt_crosses(SEXP wkt1SEXP, SEXP wkt2SEXP, SEXP strategySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::List >::type wkt1(wkt1SEXP);
+    Rcpp::traits::input_parameter< Rcpp::List >::type wkt2(wkt2SEXP);
+    Rcpp::traits::input_parameter< const char* >::type strategy(strategySEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_crosses(wkt1, wkt2, strategy));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -109,7 +134,9 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_boostgeometry_rcpp_wkt_area", (DL_FUNC) &_boostgeometry_rcpp_wkt_area, 2},
     {"_boostgeometry_rcpp_wkt_convex_hull", (DL_FUNC) &_boostgeometry_rcpp_wkt_convex_hull, 1},
+    {"_boostgeometry_rcpp_wkt_crosses", (DL_FUNC) &_boostgeometry_rcpp_wkt_crosses, 3},
     {"_boostgeometry_rcpp_wkt_envelope_cartesian", (DL_FUNC) &_boostgeometry_rcpp_wkt_envelope_cartesian, 1},
     {"_boostgeometry_rcpp_wkt_envelope_spherical", (DL_FUNC) &_boostgeometry_rcpp_wkt_envelope_spherical, 1},
     {"_boostgeometry_rcpp_wkt_envelope_geographic", (DL_FUNC) &_boostgeometry_rcpp_wkt_envelope_geographic, 1},
