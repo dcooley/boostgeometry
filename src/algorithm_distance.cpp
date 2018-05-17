@@ -3,7 +3,7 @@
 using namespace Rcpp;
 
 
-/*
+
 // [[Rcpp::export]]
 Rcpp::NumericMatrix rcpp_wkt_distance_cartesian( Rcpp::List wktFrom, Rcpp::List wktTo ) {
   Rcpp::NumericMatrix wktDistance(wktFrom.length(), wktTo.length());
@@ -56,4 +56,4 @@ Rcpp::NumericMatrix rcpp_wkt_distance_geographic( Rcpp::List wktFrom, Rcpp::List
   }
   return wktDistance;
 }
-*/
+

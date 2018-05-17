@@ -9,8 +9,16 @@ rcpp_wkt_convex_hull <- function(wkt) {
     .Call(`_boostgeometry_rcpp_wkt_convex_hull`, wkt)
 }
 
-rcpp_wkt_crosses <- function(wkt1, wkt2, strategy) {
-    .Call(`_boostgeometry_rcpp_wkt_crosses`, wkt1, wkt2, strategy)
+rcpp_wkt_distance_cartesian <- function(wktFrom, wktTo) {
+    .Call(`_boostgeometry_rcpp_wkt_distance_cartesian`, wktFrom, wktTo)
+}
+
+rcpp_wkt_distance_spherical <- function(wktFrom, wktTo) {
+    .Call(`_boostgeometry_rcpp_wkt_distance_spherical`, wktFrom, wktTo)
+}
+
+rcpp_wkt_distance_geographic <- function(wktFrom, wktTo) {
+    .Call(`_boostgeometry_rcpp_wkt_distance_geographic`, wktFrom, wktTo)
 }
 
 rcpp_wkt_envelope_cartesian <- function(wkt) {
@@ -23,6 +31,10 @@ rcpp_wkt_envelope_spherical <- function(wkt) {
 
 rcpp_wkt_envelope_geographic <- function(wkt) {
     .Call(`_boostgeometry_rcpp_wkt_envelope_geographic`, wkt)
+}
+
+rcpp_wkt_equals <- function(x, y, strategy) {
+    .Call(`_boostgeometry_rcpp_wkt_equals`, x, y, strategy)
 }
 
 rcpp_wkt_perimeter_cartesian <- function(wkt) {
@@ -43,5 +55,9 @@ rcpp_wkt_simplify <- function(wkt, strategy, distance) {
 
 rcpp_wkt_unique <- function(wkt, strategy) {
     .Call(`_boostgeometry_rcpp_wkt_unique`, wkt, strategy)
+}
+
+rcpp_wkt_within <- function(x, y, strategy) {
+    .Call(`_boostgeometry_rcpp_wkt_within`, x, y, strategy)
 }
 
