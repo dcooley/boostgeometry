@@ -57,7 +57,15 @@ rcpp_wkt_unique <- function(wkt, strategy) {
     .Call(`_boostgeometry_rcpp_wkt_unique`, wkt, strategy)
 }
 
-rcpp_wkt_within <- function(x, y, strategy) {
-    .Call(`_boostgeometry_rcpp_wkt_within`, x, y, strategy)
+rcpp_wkt_within_cartesian <- function(x, y) {
+    .Call(`_boostgeometry_rcpp_wkt_within_cartesian`, x, y)
+}
+
+rcpp_wkt_within_spherical <- function(x, y) {
+    .Call(`_boostgeometry_rcpp_wkt_within_spherical`, x, y)
+}
+
+rcpp_wkt_within_geographic <- function(x, y) {
+    .Call(`_boostgeometry_rcpp_wkt_within_geographic`, x, y)
 }
 

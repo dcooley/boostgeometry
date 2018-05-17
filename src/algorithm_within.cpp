@@ -1,30 +1,58 @@
-#include "R_boostgeometry.h"
+#include "R_boostgeometry_within.h"
 #include <Rcpp.h>
 using namespace Rcpp;
 
 // TODO(variants not supported)
 
 // [[Rcpp::export]]
-Rcpp::LogicalVector rcpp_wkt_within( Rcpp::List x, Rcpp::List y, const char* strategy ) {
-  Rcpp::LogicalVector wktWithin( x.length() );
+Rcpp::LogicalMatrix rcpp_wkt_within_cartesian( Rcpp::List x, Rcpp::List y ) {
+  Rcpp::LogicalMatrix wktWithin( x.length(), y.length() );
 
-  // return a numerical logical matrix, x by y
-  int tp;
-  make_strategy(strategy, &tp);
-
-  point_type_cartesian geom1;
-  bgm::polygon<point_type_cartesian> geom2;
+  CartesianWithinOne geom1;
+  CartesianWithinTwo geom2;
 
   for (size_t i = 0; i < x.length(); i++) {
-    //geom1 = read_any_wkt( x[i], tp );
-    bg::read_wkt( x[i], geom1 );
+    geom1 = read_cartesian_within_one_wkt( x[i] );
     for (size_t j = 0; j < y.length(); j++) {
-      //geom2 = read_any_wkt( y[j], tp2 );
-      bg::read_wkt( y[j], geom2 );
+      geom2 = read_cartesian_within_two_wkt( y[j] );
       wktWithin(i, j) = bg::within(geom1, geom2);
     }
   }
-
-
   return wktWithin;
 }
+
+// [[Rcpp::export]]
+Rcpp::LogicalMatrix rcpp_wkt_within_spherical( Rcpp::List x, Rcpp::List y ) {
+  Rcpp::LogicalMatrix wktWithin( x.length() );
+
+  SphericalWithinOne geom1;
+  SphericalWithinTwo geom2;
+
+  for (size_t i = 0; i < x.length(); i++) {
+    geom1 = read_spherical_within_one_wkt( x[i] );
+    for (size_t j = 0; j < y.length(); j++) {
+      geom2 = read_spherical_within_two_wkt( y[j] );
+      wktWithin(i, j) = bg::within(geom1, geom2);
+    }
+  }
+  return wktWithin;
+}
+
+// [[Rcpp::export]]
+Rcpp::LogicalMatrix rcpp_wkt_within_geographic( Rcpp::List x, Rcpp::List y ) {
+  Rcpp::LogicalMatrix wktWithin( x.length() );
+
+  GeographicWithinOne geom1;
+  GeographicWithinTwo geom2;
+
+  for (size_t i = 0; i < x.length(); i++) {
+    geom1 = read_geographic_within_one_wkt( x[i] );
+    for (size_t j = 0; j < y.length(); j++) {
+      geom2 = read_geographic_within_two_wkt( y[j] );
+      wktWithin(i, j) = bg::within(geom1, geom2);
+    }
+  }
+  return wktWithin;
+}
+
+

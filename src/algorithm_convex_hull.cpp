@@ -11,7 +11,7 @@ Rcpp::StringVector rcpp_wkt_convex_hull( Rcpp::List wkt ) {
   /*
 
   //typedef boost::tuple<double, double> point;
-  typedef boost::geometry::model::polygon<point_type_cartesian> polygon;
+  typedef boost::geometry::model::polygon<point_cartesian> polygon;
   CartesianGeometry poly;
 
   //polygon poly;
@@ -29,7 +29,7 @@ Rcpp::StringVector rcpp_wkt_convex_hull( Rcpp::List wkt ) {
 
   // convex_hull: cartesian
   typedef boost::tuple<double, double> point;
-  typedef bgm::polygon<point_type_cartesian> polygon;
+  typedef bgm::polygon<point_cartesian> polygon;
   polygon hull;
 
   CartesianGeometry geom;

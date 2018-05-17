@@ -14,17 +14,17 @@ Rcpp::StringVector rcpp_wkt_simplify( Rcpp::List wkt, const char* strategy, doub
 
   // SIMPLIFY: cartesian / spherical / geographic
   // POINT/MULTIPOINT/LINESTRING/POLYGON
-  //bgm::linestring<point_type_cartesian> geom;
-  //bgm::multi_linestring<point_type_cartesian> geom;
+  //bgm::linestring<point_cartesian> geom;
+  //bgm::multi_linestring<point_cartesian> geom;
 
-//  bgm::multi_point<point_type_cartesian> geom;
-//  bgm::multi_point<point_type_cartesian> geomSimplified;
+//  bgm::multi_point<point_cartesian> geom;
+//  bgm::multi_point<point_cartesian> geomSimplified;
 
-//  bgm::multi_linestring<bgm::linestring<point_type_cartesian> > geom;
-//  bgm::multi_linestring<bgm::linestring<point_type_cartesian> > geomSimplified;
+//  bgm::multi_linestring<bgm::linestring<point_cartesian> > geom;
+//  bgm::multi_linestring<bgm::linestring<point_cartesian> > geomSimplified;
 
-  bgm::multi_polygon<bgm::polygon<point_type_geographic> > geom;
-  bgm::multi_polygon<bgm::polygon<point_type_geographic> > geomSimplified;
+  bgm::multi_polygon<bgm::polygon<point_geographic> > geom;
+  bgm::multi_polygon<bgm::polygon<point_geographic> > geomSimplified;
 
   //CartesianGeometry geom;
   //CartesianGeometry geomSimplified;
@@ -33,7 +33,7 @@ Rcpp::StringVector rcpp_wkt_simplify( Rcpp::List wkt, const char* strategy, doub
   //CSGeometry geomSimplified;
 
 
-  //bgm::multi_linestring<point_type_cartesian> geomSimplified;
+  //bgm::multi_linestring<point_cartesian> geomSimplified;
   //SimpleCartesianGeometry geom;
   //SimpleCartesianGeometry geomSimplified;
   int tp;

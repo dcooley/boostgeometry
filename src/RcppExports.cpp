@@ -168,16 +168,39 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// rcpp_wkt_within
-Rcpp::LogicalVector rcpp_wkt_within(Rcpp::List x, Rcpp::List y, const char* strategy);
-RcppExport SEXP _boostgeometry_rcpp_wkt_within(SEXP xSEXP, SEXP ySEXP, SEXP strategySEXP) {
+// rcpp_wkt_within_cartesian
+Rcpp::LogicalMatrix rcpp_wkt_within_cartesian(Rcpp::List x, Rcpp::List y);
+RcppExport SEXP _boostgeometry_rcpp_wkt_within_cartesian(SEXP xSEXP, SEXP ySEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< Rcpp::List >::type x(xSEXP);
     Rcpp::traits::input_parameter< Rcpp::List >::type y(ySEXP);
-    Rcpp::traits::input_parameter< const char* >::type strategy(strategySEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_within(x, y, strategy));
+    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_within_cartesian(x, y));
+    return rcpp_result_gen;
+END_RCPP
+}
+// rcpp_wkt_within_spherical
+Rcpp::LogicalMatrix rcpp_wkt_within_spherical(Rcpp::List x, Rcpp::List y);
+RcppExport SEXP _boostgeometry_rcpp_wkt_within_spherical(SEXP xSEXP, SEXP ySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::List >::type x(xSEXP);
+    Rcpp::traits::input_parameter< Rcpp::List >::type y(ySEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_within_spherical(x, y));
+    return rcpp_result_gen;
+END_RCPP
+}
+// rcpp_wkt_within_geographic
+Rcpp::LogicalMatrix rcpp_wkt_within_geographic(Rcpp::List x, Rcpp::List y);
+RcppExport SEXP _boostgeometry_rcpp_wkt_within_geographic(SEXP xSEXP, SEXP ySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::List >::type x(xSEXP);
+    Rcpp::traits::input_parameter< Rcpp::List >::type y(ySEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_within_geographic(x, y));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -197,7 +220,9 @@ static const R_CallMethodDef CallEntries[] = {
     {"_boostgeometry_rcpp_wkt_perimeter_geographic", (DL_FUNC) &_boostgeometry_rcpp_wkt_perimeter_geographic, 1},
     {"_boostgeometry_rcpp_wkt_simplify", (DL_FUNC) &_boostgeometry_rcpp_wkt_simplify, 3},
     {"_boostgeometry_rcpp_wkt_unique", (DL_FUNC) &_boostgeometry_rcpp_wkt_unique, 2},
-    {"_boostgeometry_rcpp_wkt_within", (DL_FUNC) &_boostgeometry_rcpp_wkt_within, 3},
+    {"_boostgeometry_rcpp_wkt_within_cartesian", (DL_FUNC) &_boostgeometry_rcpp_wkt_within_cartesian, 2},
+    {"_boostgeometry_rcpp_wkt_within_spherical", (DL_FUNC) &_boostgeometry_rcpp_wkt_within_spherical, 2},
+    {"_boostgeometry_rcpp_wkt_within_geographic", (DL_FUNC) &_boostgeometry_rcpp_wkt_within_geographic, 2},
     {NULL, NULL, 0}
 };
 

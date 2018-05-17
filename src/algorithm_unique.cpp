@@ -6,14 +6,14 @@ using namespace Rcpp;
 Rcpp::StringVector rcpp_wkt_unique( Rcpp::List wkt, const char* strategy ) {
   Rcpp::StringVector wktUnique( wkt.length() );
 
-  boost::geometry::model::polygon<point_type_cartesian> poly;
+  boost::geometry::model::polygon<point_cartesian> poly;
   boost::geometry::read_wkt("POLYGON((0 0,0 0,0 5,5 5,5 5,5 5,5 0,5 0,0 0,0 0,0 0,0 0))", poly);
   boost::geometry::unique(poly);
   std::cout << boost::geometry::wkt(poly) << std::endl;
 
   // TODO(variants)
   // - doesn't work with variants
-  bgm::polygon<point_type_cartesian> geom;
+  bgm::polygon<point_cartesian> geom;
   int tp;
   make_strategy(strategy, &tp);
 

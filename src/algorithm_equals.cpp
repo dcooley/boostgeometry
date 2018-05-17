@@ -11,8 +11,8 @@ Rcpp::LogicalMatrix rcpp_wkt_equals( Rcpp::List x, Rcpp::List y, const char* str
   int tp;
   make_strategy(strategy, &tp);
 
-  bgm::polygon<point_type_cartesian> geom1;
-  bgm::polygon<point_type_cartesian> geom2;
+  bgm::polygon<point_cartesian> geom1;
+  bgm::polygon<point_cartesian> geom2;
 
   for (size_t i = 0; i < x.length(); i++) {
     //geom1 = read_any_wkt( x[i], tp );
