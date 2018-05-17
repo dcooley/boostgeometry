@@ -33,8 +33,8 @@ rcpp_wkt_envelope_geographic <- function(wkt) {
     .Call(`_boostgeometry_rcpp_wkt_envelope_geographic`, wkt)
 }
 
-rcpp_wkt_equals <- function(x, y, strategy) {
-    .Call(`_boostgeometry_rcpp_wkt_equals`, x, y, strategy)
+rcpp_wkt_equals <- function(x, y) {
+    .Call(`_boostgeometry_rcpp_wkt_equals`, x, y)
 }
 
 rcpp_wkt_perimeter_cartesian <- function(wkt) {

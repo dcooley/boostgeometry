@@ -2,8 +2,6 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
-// TODO(variants not supported)
-
 // [[Rcpp::export]]
 Rcpp::LogicalMatrix rcpp_wkt_within_cartesian( Rcpp::List x, Rcpp::List y ) {
   Rcpp::LogicalMatrix wktWithin( x.length(), y.length() );

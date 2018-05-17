@@ -1,6 +1,6 @@
 #' BG Within
 #'
-#' Checks if the first geometry (`x`) is completely inside the second (`y`) geometry
+#' Checks if the first geometry (\code{x}) is completely inside the second (\code{y}) geometry
 #'
 #' @param x
 #' @param y
@@ -16,14 +16,14 @@
 #'   "POLYGON((-2 -2, -2 2, 2 2, 2 -2, -2 -2))")
 #' bg_within(x, y)
 #'
-#' @return logical matrix returning `TRUE` if `x` is within `y`
+#' @return logical matrix returning \code{TRUE} if \code{x} is within \code{y}
 #'
 #' @notes
-#' supported geometries for `x`
+#' supported geometries for \code{x}
 #' - point
 #' - linestring
 #'
-#' supported geometries for `y`
+#' supported geometries for \code{y}
 #' - linestring
 #' - multilinestring
 #' - polygon

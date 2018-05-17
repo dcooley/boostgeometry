@@ -10,10 +10,10 @@ bg_within(x, y, strategy = c("cartesian", "spherical", "geographic"))
 \item{strategy}{}
 }
 \value{
-logical matrix returning `TRUE` if `x` is within `y`
+logical matrix returning \code{TRUE} if \code{x} is within \code{y}
 }
 \description{
-Checks if the first geometry (`x`) is completely inside the second (`y`) geometry
+Checks if the first geometry (\code{x}) is completely inside the second (\code{y}) geometry
 }
 \examples{
 point <- "POINT(4 1)"

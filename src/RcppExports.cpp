@@ -98,15 +98,14 @@ BEGIN_RCPP
 END_RCPP
 }
 // rcpp_wkt_equals
-Rcpp::LogicalMatrix rcpp_wkt_equals(Rcpp::List x, Rcpp::List y, const char* strategy);
-RcppExport SEXP _boostgeometry_rcpp_wkt_equals(SEXP xSEXP, SEXP ySEXP, SEXP strategySEXP) {
+Rcpp::LogicalMatrix rcpp_wkt_equals(Rcpp::List x, Rcpp::List y);
+RcppExport SEXP _boostgeometry_rcpp_wkt_equals(SEXP xSEXP, SEXP ySEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< Rcpp::List >::type x(xSEXP);
     Rcpp::traits::input_parameter< Rcpp::List >::type y(ySEXP);
-    Rcpp::traits::input_parameter< const char* >::type strategy(strategySEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_equals(x, y, strategy));
+    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_equals(x, y));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -214,7 +213,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_boostgeometry_rcpp_wkt_envelope_cartesian", (DL_FUNC) &_boostgeometry_rcpp_wkt_envelope_cartesian, 1},
     {"_boostgeometry_rcpp_wkt_envelope_spherical", (DL_FUNC) &_boostgeometry_rcpp_wkt_envelope_spherical, 1},
     {"_boostgeometry_rcpp_wkt_envelope_geographic", (DL_FUNC) &_boostgeometry_rcpp_wkt_envelope_geographic, 1},
-    {"_boostgeometry_rcpp_wkt_equals", (DL_FUNC) &_boostgeometry_rcpp_wkt_equals, 3},
+    {"_boostgeometry_rcpp_wkt_equals", (DL_FUNC) &_boostgeometry_rcpp_wkt_equals, 2},
     {"_boostgeometry_rcpp_wkt_perimeter_cartesian", (DL_FUNC) &_boostgeometry_rcpp_wkt_perimeter_cartesian, 1},
     {"_boostgeometry_rcpp_wkt_perimeter_spherical", (DL_FUNC) &_boostgeometry_rcpp_wkt_perimeter_spherical, 1},
     {"_boostgeometry_rcpp_wkt_perimeter_geographic", (DL_FUNC) &_boostgeometry_rcpp_wkt_perimeter_geographic, 1},
