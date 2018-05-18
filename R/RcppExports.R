@@ -5,6 +5,10 @@ rcpp_wkt_area <- function(wkt, strategy) {
     .Call(`_boostgeometry_rcpp_wkt_area`, wkt, strategy)
 }
 
+rcpp_wkt_centroid <- function(wkt) {
+    .Call(`_boostgeometry_rcpp_wkt_centroid`, wkt)
+}
+
 rcpp_wkt_convex_hull <- function(wkt) {
     .Call(`_boostgeometry_rcpp_wkt_convex_hull`, wkt)
 }

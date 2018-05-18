@@ -10,11 +10,7 @@ namespace bgm = boost::geometry::model;
 
 typedef boost::variant<
   point_cartesian
-  //, multi_point_cartesian
   , linestring_cartesian
-  //, multi_linestring_cartesian
-  //, polygon_cartesian
-  //, multi_polygon_cartesian
 > CartesianWithinOne;
 
 typedef boost::variant<

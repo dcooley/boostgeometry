@@ -8,6 +8,7 @@ Rcpp::LogicalMatrix rcpp_wkt_within_cartesian( Rcpp::List x, Rcpp::List y ) {
 
   CartesianWithinOne geom1;
   CartesianWithinTwo geom2;
+  // TODO(try-catch unsupported types)
 
   for (size_t i = 0; i < x.length(); i++) {
     geom1 = read_cartesian_within_one_wkt( x[i] );
@@ -21,7 +22,7 @@ Rcpp::LogicalMatrix rcpp_wkt_within_cartesian( Rcpp::List x, Rcpp::List y ) {
 
 // [[Rcpp::export]]
 Rcpp::LogicalMatrix rcpp_wkt_within_spherical( Rcpp::List x, Rcpp::List y ) {
-  Rcpp::LogicalMatrix wktWithin( x.length() );
+  Rcpp::LogicalMatrix wktWithin( x.length(), y.length() );
 
   SphericalWithinOne geom1;
   SphericalWithinTwo geom2;
@@ -38,7 +39,7 @@ Rcpp::LogicalMatrix rcpp_wkt_within_spherical( Rcpp::List x, Rcpp::List y ) {
 
 // [[Rcpp::export]]
 Rcpp::LogicalMatrix rcpp_wkt_within_geographic( Rcpp::List x, Rcpp::List y ) {
-  Rcpp::LogicalMatrix wktWithin( x.length() );
+  Rcpp::LogicalMatrix wktWithin( x.length(), y.length() );
 
   GeographicWithinOne geom1;
   GeographicWithinTwo geom2;

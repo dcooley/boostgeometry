@@ -3,13 +3,13 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
-/*
+
 // [[Rcpp::export]]
 Rcpp::StringVector rcpp_wkt_centroid( Rcpp::List wkt ) {
   Rcpp::StringVector wktCentroid( wkt.length() );
 
   // Centroid - cartesian only
-  point_type_cartesian pt;
+  point_cartesian pt;
   CartesianGeometry geom;
 
   for (size_t i = 0; i < wkt.length(); i++ ) {
@@ -21,5 +21,5 @@ Rcpp::StringVector rcpp_wkt_centroid( Rcpp::List wkt ) {
   }
   return wktCentroid;
 }
-*/
+
 
