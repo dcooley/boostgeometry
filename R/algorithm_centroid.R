@@ -10,7 +10,4 @@
 #' bg_centroid(wkt)
 #'
 #' @export
-bg_centroid <- function(wkt, strategy = c("cartesian")) {
-  strategy <- match.arg(strategy)
-  rcpp_wkt_centroid(wkt)
-}
+bg_centroid <- function(wkt) rcpp_wkt_centroid(wkt)

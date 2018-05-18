@@ -9,8 +9,12 @@ rcpp_wkt_centroid <- function(wkt) {
     .Call(`_boostgeometry_rcpp_wkt_centroid`, wkt)
 }
 
-rcpp_wkt_convex_hull <- function(wkt) {
-    .Call(`_boostgeometry_rcpp_wkt_convex_hull`, wkt)
+rcpp_wkt_convex_hull_cartesian <- function(wkt) {
+    .Call(`_boostgeometry_rcpp_wkt_convex_hull_cartesian`, wkt)
+}
+
+rcpp_wkt_crosses_cartesian <- function(x, y) {
+    .Call(`_boostgeometry_rcpp_wkt_crosses_cartesian`, x, y)
 }
 
 rcpp_wkt_distance_cartesian <- function(wktFrom, wktTo) {

@@ -4,7 +4,7 @@
 \alias{bg_centroid}
 \title{BG Centroid}
 \usage{
-bg_centroid(wkt, strategy = c("cartesian"))
+bg_centroid(wkt)
 }
 \arguments{
 \item{strategy}{}
