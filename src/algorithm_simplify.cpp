@@ -1,55 +1,58 @@
-#include "R_boostgeometry.h"
+#include "R_boostgeometry_simplify.h"
 #include <Rcpp.h>
 using namespace Rcpp;
 
+// TODO(other geometries)
 
-void simplify_geometry( Rcpp::List& wkt, Rcpp::List& wktSimplified ) {
+// [[Rcpp::export]]
+Rcpp::StringVector rcpp_wkt_simplify_cartesian( Rcpp::List wkt, double distance) {
+  Rcpp::StringVector wktSimplify( wkt.length() );
 
+  CartesianSimplify geom;
+  CartesianSimplify geomSimplified;
+
+  for (size_t i = 0; i < wkt.length(); i++ ) {
+    geom = read_cartesian_simplify_wkt( wkt[i] );
+    std::ostringstream os;
+    bg::simplify(geom, geomSimplified, distance);
+    os << bg::wkt( geomSimplified );
+    wktSimplify[i] = os.str();
+  }
+  return wktSimplify;
 }
 
 
 // [[Rcpp::export]]
-Rcpp::StringVector rcpp_wkt_simplify( Rcpp::List wkt, const char* strategy, double distance) {
+Rcpp::StringVector rcpp_wkt_simplify_spherical( Rcpp::List wkt, double distance) {
   Rcpp::StringVector wktSimplify( wkt.length() );
 
-  // SIMPLIFY: cartesian / spherical / geographic
-  // POINT/MULTIPOINT/LINESTRING/POLYGON
-  //bgm::linestring<point_cartesian> geom;
-  //bgm::multi_linestring<point_cartesian> geom;
-
-//  bgm::multi_point<point_cartesian> geom;
-//  bgm::multi_point<point_cartesian> geomSimplified;
-
-//  bgm::multi_linestring<bgm::linestring<point_cartesian> > geom;
-//  bgm::multi_linestring<bgm::linestring<point_cartesian> > geomSimplified;
-
-  bgm::multi_polygon<bgm::polygon<point_geographic> > geom;
-  bgm::multi_polygon<bgm::polygon<point_geographic> > geomSimplified;
-
-  //CartesianGeometry geom;
-  //CartesianGeometry geomSimplified;
-
-  //CSGeometry geom;
-  //CSGeometry geomSimplified;
-
-
-  //bgm::multi_linestring<point_cartesian> geomSimplified;
-  //SimpleCartesianGeometry geom;
-  //SimpleCartesianGeometry geomSimplified;
-  int tp;
-  make_strategy(strategy, &tp);
-  std::ostringstream os;
+  SphericalSimplify geom;
+  SphericalSimplify geomSimplified;
 
   for (size_t i = 0; i < wkt.length(); i++ ) {
-    bg::read_wkt( wkt[i], geom );
-    //geom = read_cs_wkt( wkt[i], tp );
-
-    //std::ostringstream os;
-    //bg::simplify(geom, geomSimplified, distance);
-    //std::cout << bg::wkt( geomSimplified ) << std::endl;
-    //os << bg::wkt(geomSimplified);
-    //wktSimplify[i] = os.str();
+    geom = read_spherical_simplify_wkt( wkt[i] );
+    std::ostringstream os;
+    bg::simplify(geom, geomSimplified, distance);
+    os << bg::wkt( geomSimplified );
+    wktSimplify[i] = os.str();
   }
-
   return wktSimplify;
 }
+
+/*
+Rcpp::StringVector rcpp_wkt_simplify_geographic( Rcpp::List wkt, double distance) {
+  Rcpp::StringVector wktSimplify( wkt.length() );
+
+  GeographicSimplify geom;
+  GeographicSimplify geomSimplified;
+
+  for (size_t i = 0; i < wkt.length(); i++ ) {
+    geom = read_geographic_simplify_wkt( wkt[i] );
+    std::ostringstream os;
+    bg::simplify(geom, geomSimplified, distance);
+    os << bg::wkt( geomSimplified );
+    wktSimplify[i] = os.str();
+  }
+  return wktSimplify;
+}
+*/

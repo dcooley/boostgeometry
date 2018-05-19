@@ -12,3 +12,21 @@ bg_perimeter(x, strategy = c("cartesian", "spherical", "geographic"))
 \description{
 Calculates the length of the perimeter of a geometry
 }
+\note{
+points and linestrings return zero
+}
+\examples{
+
+polygon <- "POLYGON((0 0, 0 1, 1 1, 1 0, 0 0))"
+bg_perimeter(polygon)
+bg_perimeter(polygon, "spherical")
+bg_perimeter(polygon, "geographic")
+
+bg_perimeter("POINT(1 1)")
+bg_perimeter("LINESTRING(0 0, 0 1, 1 1, 1 0, 0 0)")
+
+bg_perimeter("MULTIPOLYGON(((0 0, 0 1, 1 1, 1 0, 0 0),(0.25 0.25, 0.25 0.75, 0.75 0.75, 0.75 0.25, 0.25 0.25)))")
+bg_perimeter("MULTIPOLYGON(((0 0, 0 1, 1 1, 1 0, 0 0),(0.25 0.25, 0.25 0.75, 0.75 0.75, 0.75 0.25, 0.25 0.25)))", "geographic")
+
+
+}

@@ -2,8 +2,6 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
-
-
 // [[Rcpp::export]]
 Rcpp::NumericMatrix rcpp_wkt_distance_cartesian( Rcpp::List wktFrom, Rcpp::List wktTo ) {
   Rcpp::NumericMatrix wktDistance(wktFrom.length(), wktTo.length());
@@ -12,15 +10,14 @@ Rcpp::NumericMatrix rcpp_wkt_distance_cartesian( Rcpp::List wktFrom, Rcpp::List 
   CartesianGeometry geomTo;
 
   for (size_t i = 0; i < wktFrom.length(); i++) {
-    geomFrom = read_cartesian_wkt(wktFrom[i]);
+    geomFrom = read_cartesian_wkt( wktFrom[i] );
     for (size_t j = 0; j < wktTo.length(); j++) {
-      geomTo = read_cartesian_wkt(wktTo[j]);
+      geomTo = read_cartesian_wkt( wktTo[j] );
       wktDistance(i, j) = bg::distance(geomFrom, geomTo);
     }
   }
   return wktDistance;
 }
-
 
 // [[Rcpp::export]]
 Rcpp::NumericMatrix rcpp_wkt_distance_spherical( Rcpp::List wktFrom, Rcpp::List wktTo ) {
@@ -30,15 +27,14 @@ Rcpp::NumericMatrix rcpp_wkt_distance_spherical( Rcpp::List wktFrom, Rcpp::List 
   SphericalGeometry geomTo;
 
   for (size_t i = 0; i < wktFrom.length(); i++) {
-    geomFrom = read_spherical_wkt(wktFrom[i]);
+    geomFrom = read_spherical_wkt( wktFrom[i] );
     for (size_t j = 0; j < wktTo.length(); j++) {
-      geomTo = read_spherical_wkt(wktTo[j]);
+      geomTo = read_spherical_wkt( wktTo[j] );
       wktDistance(i, j) = bg::distance(geomFrom, geomTo);
     }
   }
   return wktDistance;
 }
-
 
 // [[Rcpp::export]]
 Rcpp::NumericMatrix rcpp_wkt_distance_geographic( Rcpp::List wktFrom, Rcpp::List wktTo ) {
@@ -48,9 +44,9 @@ Rcpp::NumericMatrix rcpp_wkt_distance_geographic( Rcpp::List wktFrom, Rcpp::List
   GeographicGeometry geomTo;
 
   for (size_t i = 0; i < wktFrom.length(); i++) {
-    geomFrom = read_geographic_wkt(wktFrom[i]);
+    geomFrom = read_geographic_wkt( wktFrom[i] );
     for (size_t j = 0; j < wktTo.length(); j++) {
-      geomTo = read_geographic_wkt(wktTo[j]);
+      geomTo = read_geographic_wkt( wktTo[j] );
       wktDistance(i, j) = bg::distance(geomFrom, geomTo);
     }
   }

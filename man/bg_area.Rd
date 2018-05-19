@@ -4,7 +4,7 @@
 \alias{bg_area}
 \title{BG Area}
 \usage{
-bg_area(wkt, strategy = c("cartesian", "spherical", "geographic"))
+bg_area(x, strategy = c("cartesian", "spherical", "geographic"))
 }
 \arguments{
 \item{strategy}{}

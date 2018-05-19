@@ -4,20 +4,28 @@
 \alias{bg_distance}
 \title{BG Distance}
 \usage{
-bg_distance(wktFrom, wktTo = NULL, strategy = c("cartesian", "spherical",
+bg_distance(x, y = NULL, strategy = c("cartesian", "spherical",
   "geographic"))
 }
 \arguments{
-\item{wktTo}{if null, each element of `wktFrom` is assessed against every other element of `wktFrom`}
+\item{y}{if null, each element of \code{x} is assessed against every other element of \code{y}}
 
 \item{strategy}{}
 }
 \value{
-matrix
+logical matrix where the rows are the geometries in \code{x} and the columns
+are the geometries in \code{y}
 }
 \description{
 Calculates the distances between two sets of geometries
 }
 \examples{
+points <- c("POINT(0 0)", "POINT(2 0)", "POINT(2 2)")
+bg_distance(points)
+bg_distance(points, points)
+
+lines <- c("LINESTRING(1 1, 1 0, 1 -1)")
+bg_distance(points, lines)
+bg_distance(points, lines, "geographic")
 
 }

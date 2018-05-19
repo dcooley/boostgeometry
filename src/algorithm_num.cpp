@@ -3,7 +3,6 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
-/*
 // [[Rcpp::export]]
 Rcpp::NumericVector rcpp_wkt_num_geometries( Rcpp::List wkt ) {
 
@@ -56,7 +55,6 @@ Rcpp::NumericVector rcpp_wkt_num_segments( Rcpp::List wkt ) {
 
   // TODO:
   // - account for open & closed polygons & winding?
-
   Rcpp::NumericVector wktNumG( wkt.length() );
 
   // num_segments - cartesian / spherical / geographics
@@ -68,4 +66,4 @@ Rcpp::NumericVector rcpp_wkt_num_segments( Rcpp::List wkt ) {
   }
   return wktNumG;
 }
-*/
+

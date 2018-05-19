@@ -4,7 +4,7 @@
 \alias{bg_is_simple}
 \title{BG Is Simple}
 \usage{
-bg_is_simple(wkt, strategy = c("cartesian", "spherical", "geographic"))
+bg_is_simple(x)
 }
 \arguments{
 \item{strategy}{}
@@ -13,5 +13,7 @@ bg_is_simple(wkt, strategy = c("cartesian", "spherical", "geographic"))
 Checks if a geometry is simple
 }
 \examples{
+bg_is_simple("MULTILINESTRING((0 0,0 10,10 10,10 0,0 0),(10 10,20 20))")
+bg_is_simple("LINESTRING(0 0,0 10,10 10,10 0,0 0)")
 
 }

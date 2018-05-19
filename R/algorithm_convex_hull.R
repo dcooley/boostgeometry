@@ -2,7 +2,7 @@
 #'
 #' @param x
 #'
-#' @notes
+#' @note
 #' supported geometries for \code{x}
 #' - multipoint
 #' - linestring

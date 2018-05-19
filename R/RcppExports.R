@@ -17,6 +17,14 @@ rcpp_wkt_crosses_cartesian <- function(x, y) {
     .Call(`_boostgeometry_rcpp_wkt_crosses_cartesian`, x, y)
 }
 
+rcpp_wkt_crosses_spherical <- function(x, y) {
+    .Call(`_boostgeometry_rcpp_wkt_crosses_spherical`, x, y)
+}
+
+rcpp_wkt_crosses_geographic <- function(x, y) {
+    .Call(`_boostgeometry_rcpp_wkt_crosses_geographic`, x, y)
+}
+
 rcpp_wkt_distance_cartesian <- function(wktFrom, wktTo) {
     .Call(`_boostgeometry_rcpp_wkt_distance_cartesian`, wktFrom, wktTo)
 }
@@ -41,8 +49,44 @@ rcpp_wkt_envelope_geographic <- function(wkt) {
     .Call(`_boostgeometry_rcpp_wkt_envelope_geographic`, wkt)
 }
 
-rcpp_wkt_equals <- function(x, y) {
-    .Call(`_boostgeometry_rcpp_wkt_equals`, x, y)
+rcpp_wkt_is_empty <- function(wkt, strategy) {
+    .Call(`_boostgeometry_rcpp_wkt_is_empty`, wkt, strategy)
+}
+
+rcpp_wkt_is_simple <- function(wkt, strategy) {
+    .Call(`_boostgeometry_rcpp_wkt_is_simple`, wkt, strategy)
+}
+
+rcpp_wkt_is_valid <- function(wkt, strategy) {
+    .Call(`_boostgeometry_rcpp_wkt_is_valid`, wkt, strategy)
+}
+
+rcpp_wkt_length_cartesian <- function(wkt) {
+    .Call(`_boostgeometry_rcpp_wkt_length_cartesian`, wkt)
+}
+
+rcpp_wkt_length_spherical <- function(wkt) {
+    .Call(`_boostgeometry_rcpp_wkt_length_spherical`, wkt)
+}
+
+rcpp_wkt_length_geographic <- function(wkt) {
+    .Call(`_boostgeometry_rcpp_wkt_length_geographic`, wkt)
+}
+
+rcpp_wkt_num_geometries <- function(wkt) {
+    .Call(`_boostgeometry_rcpp_wkt_num_geometries`, wkt)
+}
+
+rcpp_wkt_num_interior_rings <- function(wkt) {
+    .Call(`_boostgeometry_rcpp_wkt_num_interior_rings`, wkt)
+}
+
+rcpp_wkt_num_points <- function(wkt) {
+    .Call(`_boostgeometry_rcpp_wkt_num_points`, wkt)
+}
+
+rcpp_wkt_num_segments <- function(wkt) {
+    .Call(`_boostgeometry_rcpp_wkt_num_segments`, wkt)
 }
 
 rcpp_wkt_perimeter_cartesian <- function(wkt) {
@@ -57,12 +101,12 @@ rcpp_wkt_perimeter_geographic <- function(wkt) {
     .Call(`_boostgeometry_rcpp_wkt_perimeter_geographic`, wkt)
 }
 
-rcpp_wkt_simplify <- function(wkt, strategy, distance) {
-    .Call(`_boostgeometry_rcpp_wkt_simplify`, wkt, strategy, distance)
+rcpp_wkt_simplify_cartesian <- function(wkt, distance) {
+    .Call(`_boostgeometry_rcpp_wkt_simplify_cartesian`, wkt, distance)
 }
 
-rcpp_wkt_unique <- function(wkt, strategy) {
-    .Call(`_boostgeometry_rcpp_wkt_unique`, wkt, strategy)
+rcpp_wkt_simplify_spherical <- function(wkt, distance) {
+    .Call(`_boostgeometry_rcpp_wkt_simplify_spherical`, wkt, distance)
 }
 
 rcpp_wkt_within_cartesian <- function(x, y) {

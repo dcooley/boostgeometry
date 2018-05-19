@@ -2,7 +2,7 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
-/*
+
 // [[Rcpp::export]]
 Rcpp::NumericVector rcpp_wkt_is_empty( Rcpp::List wkt, const char* strategy ) {
   Rcpp::NumericVector wktEmpty( wkt.length() );
@@ -38,7 +38,7 @@ Rcpp::NumericVector rcpp_wkt_is_simple( Rcpp::List wkt, const char* strategy ) {
 // [[Rcpp::export]]
 Rcpp::NumericVector rcpp_wkt_is_valid( Rcpp::List wkt, const char* strategy ) {
   Rcpp::NumericVector wktValid( wkt.length() );
-
+  // TODO(other is_valid implementations)
   // IS_EMPTY: cartesian / spherical / geographic
   CSGGeometry geom;
   int tp;
@@ -51,5 +51,4 @@ Rcpp::NumericVector rcpp_wkt_is_valid( Rcpp::List wkt, const char* strategy ) {
   return wktValid;
 }
 
-*/
 

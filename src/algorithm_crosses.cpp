@@ -22,8 +22,7 @@ Rcpp::LogicalMatrix rcpp_wkt_crosses_cartesian( Rcpp::List x, Rcpp::List y ) {
   return wktCrosses;
 }
 
-
-/*
+// [[Rcpp::export]]
 Rcpp::LogicalMatrix rcpp_wkt_crosses_spherical( Rcpp::List x, Rcpp::List y ) {
   Rcpp::LogicalMatrix wktCrosses( x.length(), y.length() );
 
@@ -40,6 +39,7 @@ Rcpp::LogicalMatrix rcpp_wkt_crosses_spherical( Rcpp::List x, Rcpp::List y ) {
   return wktCrosses;
 }
 
+// [[Rcpp::export]]
 Rcpp::LogicalMatrix rcpp_wkt_crosses_geographic( Rcpp::List x, Rcpp::List y ) {
   Rcpp::LogicalMatrix wktCrosses( x.length(), y.length() );
 
@@ -55,4 +55,4 @@ Rcpp::LogicalMatrix rcpp_wkt_crosses_geographic( Rcpp::List x, Rcpp::List y ) {
   }
   return wktCrosses;
 }
-*/
+

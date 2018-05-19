@@ -4,14 +4,15 @@
 \alias{bg_number_points}
 \title{BG Number Points}
 \usage{
-bg_number_points(wkt)
+bg_number_points(x)
 }
 \arguments{
-\item{wkt}{}
+\item{x}{}
 }
 \description{
 Calculates the number of points of a geometry
 }
 \examples{
+bg_number_points("MULTIPOLYGON(((0 0,0 10,10 0,0 0),(1 1,1 9,9 1,1 1)),((10 10,10 7,7 10,10 10)))")
 
 }

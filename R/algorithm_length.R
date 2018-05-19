@@ -6,6 +6,8 @@
 #' @param strategy
 #'
 #' @examples
+#' bg_length("LINESTRING(0 0,1 1,4 8,3 2)")
+#' bg_length("LINESTRING(0 0,1 1,4 8,3 2)", "geographic")
 #'
 #' @export
 bg_length <- function(x, strategy = c('cartesian','spherical','geographic')) {

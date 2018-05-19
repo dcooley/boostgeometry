@@ -18,7 +18,7 @@
 #'
 #' @return logical matrix returning \code{TRUE} if \code{x} is within \code{y}
 #'
-#' @notes
+#' @note
 #' supported geometries for \code{x}
 #' - point
 #' - linestring

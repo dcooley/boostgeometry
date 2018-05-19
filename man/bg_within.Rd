@@ -15,6 +15,17 @@ logical matrix returning \code{TRUE} if \code{x} is within \code{y}
 \description{
 Checks if the first geometry (\code{x}) is completely inside the second (\code{y}) geometry
 }
+\note{
+supported geometries for \code{x}
+- point
+- linestring
+
+supported geometries for \code{y}
+- linestring
+- multilinestring
+- polygon
+- multipolygon
+}
 \examples{
 point <- "POINT(4 1)"
 poly <- "POLYGON((2 1.3,2.4 1.7,2.8 1.8,3.4 1.2,3.7 1.6,3.4 2,4.1 3,5.3 2.6,5.4 1.2,4.9 0.8,2.9 0.7,2 1.3), (4.0 2.0, 4.2 1.4, 4.8 1.9, 4.4 2.2, 4.0 2.0))"

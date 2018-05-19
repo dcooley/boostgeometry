@@ -1,33 +1,53 @@
-#include "R_boostgeometry.h"
+/*
+#include "R_boostgeometry_unique.h"
 #include <Rcpp.h>
 using namespace Rcpp;
 
-// [[Rcpp::export]]
-Rcpp::StringVector rcpp_wkt_unique( Rcpp::List wkt, const char* strategy ) {
+// TODO(equals doesn't work with variants)
+Rcpp::StringVector rcpp_wkt_unique_cartesian( Rcpp::List wkt ) {
   Rcpp::StringVector wktUnique( wkt.length() );
 
-  boost::geometry::model::polygon<point_cartesian> poly;
-  boost::geometry::read_wkt("POLYGON((0 0,0 0,0 5,5 5,5 5,5 5,5 0,5 0,0 0,0 0,0 0,0 0))", poly);
-  boost::geometry::unique(poly);
-  std::cout << boost::geometry::wkt(poly) << std::endl;
-
-  // TODO(variants)
-  // - doesn't work with variants
-  bgm::polygon<point_cartesian> geom;
-  int tp;
-  make_strategy(strategy, &tp);
+  CartesianUnique geom;
 
   for (size_t i = 0; i < wkt.length(); i++ ) {
-    //geom = read_any_wkt(wkt[i], tp);
-    bg::read_wkt(wkt[i], geom);
+    geom = read_cartesian_unique_wkt( wkt[i] );
     bg::unique( geom );
     std::ostringstream os;
     os << bg::wkt( geom );
     wktUnique[i] = os.str();
   }
+  return wktUnique;
+}
 
+Rcpp::StringVector rcpp_wkt_unique_spherical( Rcpp::List wkt ) {
+  Rcpp::StringVector wktUnique( wkt.length() );
+
+  SphericalUnique geom;
+
+  for (size_t i = 0; i < wkt.length(); i++ ) {
+    geom = read_spherical_unique_wkt( wkt[i] );
+    bg::unique( geom );
+    std::ostringstream os;
+    os << bg::wkt( geom );
+    wktUnique[i] = os.str();
+  }
   return wktUnique;
 }
 
 
+Rcpp::StringVector rcpp_wkt_unique_geographic( Rcpp::List wkt ) {
+  Rcpp::StringVector wktUnique( wkt.length() );
+
+  GeographicUnique geom;
+
+  for (size_t i = 0; i < wkt.length(); i++ ) {
+    geom = read_geographic_unique_wkt( wkt[i] );
+    bg::unique( geom );
+    std::ostringstream os;
+    os << bg::wkt( geom );
+    wktUnique[i] = os.str();
+  }
+  return wktUnique;
+}
+*/
 

@@ -4,7 +4,7 @@
 \alias{bg_is_valid}
 \title{BG Is Valid}
 \usage{
-bg_is_valid(wkt, strategy = c("cartesian", "spherical", "geographic"))
+bg_is_valid(x)
 }
 \arguments{
 \item{strategy}{}
@@ -13,5 +13,7 @@ bg_is_valid(wkt, strategy = c("cartesian", "spherical", "geographic"))
 Checks if a geometry is valid
 }
 \examples{
+bg_is_valid("POLYGON((0 0,0 10,10 10,10 0,0 0),(0 0,9 1,9 2,0 0),(0 0,2 9,1 9,0 0),(2 9,9 2,9 9,2 9))")
+bg_is_valid("POLYGON((0 0,0 10,10 10,10 0,0 0))")
 
 }

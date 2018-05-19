@@ -4,14 +4,17 @@
 \alias{bg_number_geometries}
 \title{BG Number Geometries}
 \usage{
-bg_number_geometries(wkt)
+bg_number_geometries(x)
 }
 \arguments{
-\item{wkt}{}
+\item{x}{}
 }
 \description{
-Calculates the number of geometries of a geometry
+Calculates the number of geometries of a multi-geometry
 }
 \examples{
+bg_number_geometries("LINESTRING(0 0, 0 1, 1 1, 1 0, 0 0)")
+bg_number_geometries("MULTIPOLYGON(((0 0,0 10,10 0,0 0),(1 1,1 9,9 1,1 1)),((10 10,10 7,7 10,10 10)))")
+
 
 }

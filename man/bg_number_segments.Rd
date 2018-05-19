@@ -4,14 +4,15 @@
 \alias{bg_number_segments}
 \title{BG Number Segments}
 \usage{
-bg_number_segments(wkt)
+bg_number_segments(x)
 }
 \arguments{
-\item{wkt}{}
+\item{x}{}
 }
 \description{
 Calculates the number of segments of a geometry
 }
 \examples{
+bg_number_segments("MULTIPOLYGON(((0 0,0 10,10 0),(1 1,8 1,1 8)),((10 10,10 20,20 10)))")
 
 }

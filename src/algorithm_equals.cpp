@@ -2,9 +2,9 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
-// TODO(variants not supported)
+// TODO(not fully supported)
 
-// [[Rcpp::export]]
+/*
 Rcpp::LogicalMatrix rcpp_wkt_equals( Rcpp::List x, Rcpp::List y) {
   Rcpp::LogicalMatrix wktEquals( x.length(), y.length() );
 
@@ -21,3 +21,4 @@ Rcpp::LogicalMatrix rcpp_wkt_equals( Rcpp::List x, Rcpp::List y) {
 
   return wktEquals;
 }
+*/

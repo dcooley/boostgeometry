@@ -4,7 +4,7 @@
 \alias{bg_is_empty}
 \title{BG Is Empty}
 \usage{
-bg_is_empty(wkt, strategy = c("cartesian", "spherical", "geographic"))
+bg_is_empty(x)
 }
 \arguments{
 \item{strategy}{}
@@ -13,5 +13,6 @@ bg_is_empty(wkt, strategy = c("cartesian", "spherical", "geographic"))
 Checks if a geometry is empty
 }
 \examples{
+bg_is_empty("MULTILINESTRING((0 0,0 10,10 0),(1 1,8 1,1 8))")
 
 }
