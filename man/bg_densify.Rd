@@ -16,5 +16,7 @@ smaller segments
 \examples{
 
 bg_densify("POLYGON((0 0,0 10,10 10,10 0,0 0),(1 1,4 1,4 4,1 4,1 1))", distance = 6)
+bg_densify("POLYGON((0 0,0 10,10 10,10 0,0 0),(1 1,4 1,4 4,1 4,1 1))", strategy = "spherical", distance = 0.06)
+bg_densify("POLYGON((0 0,0 10,10 10,10 0,0 0),(1 1,4 1,4 4,1 4,1 1))", strategy = "geographic", distance = 60000)
 
 }
