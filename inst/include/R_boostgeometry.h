@@ -17,6 +17,7 @@ namespace bgm = boost::geometry::model;
 
 namespace boostgeometry {
   const float EARTH_RADIUS = 6371009.0;    // metres
+  // 6378137.0 ?
 }
 
 //https://stackoverflow.com/questions/48040584/how-to-create-a-geometry-using-a-variant

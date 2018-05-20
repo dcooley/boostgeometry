@@ -1,18 +1,18 @@
-
+/*
 #ifndef R_BOOSTGEOMETRY_BUFFER_H
 #define R_BOOSTGEOMETRY_BUFFER_H
 
 #include "R_boostgeometry.h"
 
 typedef boost::variant<
-  point_cartesian
-  //, multi_point_cartesian
+  //point_cartesian
+   multi_point_cartesian
   //, linestring_cartesian
   //, multi_linestring_cartesian
   //, polygon_cartesian
-  //, multi_polygon_cartesian
+  // multi_polygon_cartesian
 > CartesianBuffer;
-/*
+
 typedef boost::variant<
   point_spherical
   , multi_point_spherical
@@ -30,12 +30,12 @@ typedef boost::variant<
   , polygon_geographic
   , multi_polygon_geographic
 > GeographicBuffer;
-*/
+
 template <typename Variant = CartesianBuffer>
 Variant read_cartesian_buffer_wkt(std::string const& wkt) {
   return detail::read_any_helper<Variant>::call(wkt);
 }
-/*
+
 template <typename Variant = SphericalBuffer>
 Variant read_spherical_buffer_wkt(std::string const& wkt) {
   return detail::read_any_helper<Variant>::call(wkt);
@@ -45,5 +45,6 @@ template <typename Variant = GeographicBuffer>
 Variant read_geographic_buffer_wkt(std::string const& wkt) {
   return detail::read_any_helper<Variant>::call(wkt);
 }
-*/
+
 #endif
+*/
