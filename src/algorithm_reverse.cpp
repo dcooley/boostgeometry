@@ -4,8 +4,8 @@ using namespace Rcpp;
 
 
 // [[Rcpp::export]]
-Rcpp::StringVector rcpp_wkt_correct( Rcpp::List wkt, const char* strategy ) {
-  Rcpp::StringVector wktCorrect( wkt.length() );
+Rcpp::StringVector rcpp_wkt_reverse( Rcpp::List wkt, const char* strategy ) {
+  Rcpp::StringVector wktReverse( wkt.length() );
 
   CSGGeometry geom;
   int tp;
@@ -14,11 +14,9 @@ Rcpp::StringVector rcpp_wkt_correct( Rcpp::List wkt, const char* strategy ) {
   for (size_t i = 0; i < wkt.length(); i++ ) {
     geom = read_any_wkt(wkt[i], tp);
     std::ostringstream os;
-    bg::correct( geom );
+    bg::reverse( geom );
     os << bg::wkt( geom );
-    wktCorrect[i] = os.str();
+    wktReverse[i] = os.str();
   }
-  return wktCorrect;
+  return wktReverse;
 }
-
-

@@ -349,6 +349,18 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// rcpp_wkt_reverse
+Rcpp::StringVector rcpp_wkt_reverse(Rcpp::List wkt, const char* strategy);
+RcppExport SEXP _boostgeometry_rcpp_wkt_reverse(SEXP wktSEXP, SEXP strategySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::List >::type wkt(wktSEXP);
+    Rcpp::traits::input_parameter< const char* >::type strategy(strategySEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_wkt_reverse(wkt, strategy));
+    return rcpp_result_gen;
+END_RCPP
+}
 // rcpp_wkt_simplify_cartesian
 Rcpp::StringVector rcpp_wkt_simplify_cartesian(Rcpp::List wkt, double distance);
 RcppExport SEXP _boostgeometry_rcpp_wkt_simplify_cartesian(SEXP wktSEXP, SEXP distanceSEXP) {
@@ -441,6 +453,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_boostgeometry_rcpp_wkt_perimeter_cartesian", (DL_FUNC) &_boostgeometry_rcpp_wkt_perimeter_cartesian, 1},
     {"_boostgeometry_rcpp_wkt_perimeter_spherical", (DL_FUNC) &_boostgeometry_rcpp_wkt_perimeter_spherical, 1},
     {"_boostgeometry_rcpp_wkt_perimeter_geographic", (DL_FUNC) &_boostgeometry_rcpp_wkt_perimeter_geographic, 1},
+    {"_boostgeometry_rcpp_wkt_reverse", (DL_FUNC) &_boostgeometry_rcpp_wkt_reverse, 2},
     {"_boostgeometry_rcpp_wkt_simplify_cartesian", (DL_FUNC) &_boostgeometry_rcpp_wkt_simplify_cartesian, 2},
     {"_boostgeometry_rcpp_wkt_simplify_spherical", (DL_FUNC) &_boostgeometry_rcpp_wkt_simplify_spherical, 2},
     {"_boostgeometry_rcpp_wkt_within_cartesian", (DL_FUNC) &_boostgeometry_rcpp_wkt_within_cartesian, 2},

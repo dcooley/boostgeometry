@@ -1,4 +1,4 @@
-#include "R_boostgeometry_densify.h"
+#include "R_boostgeometry.h"
 #include <Rcpp.h>
 using namespace Rcpp;
 

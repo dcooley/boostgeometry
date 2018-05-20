@@ -121,6 +121,10 @@ rcpp_wkt_perimeter_geographic <- function(wkt) {
     .Call(`_boostgeometry_rcpp_wkt_perimeter_geographic`, wkt)
 }
 
+rcpp_wkt_reverse <- function(wkt, strategy) {
+    .Call(`_boostgeometry_rcpp_wkt_reverse`, wkt, strategy)
+}
+
 rcpp_wkt_simplify_cartesian <- function(wkt, distance) {
     .Call(`_boostgeometry_rcpp_wkt_simplify_cartesian`, wkt, distance)
 }
