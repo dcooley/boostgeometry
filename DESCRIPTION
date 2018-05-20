@@ -17,4 +17,5 @@ LinkingTo:
 Imports: 
     Rcpp
 Suggests: 
-    testthat
+    testthat,
+    covr
